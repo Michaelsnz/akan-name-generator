@@ -178,3 +178,53 @@ button{
     justify-content: center;
     gap: 8px;
 }
+.table-section{
+    margin-bottom: 48px;
+}
+.table-section h2{
+    font-family: "Playfair Display" serif;
+    font-size: 28px;
+    color: #3b2012;
+    margin-bottom: 4px;
+}
+.table-intro{
+    font-size: 16px;
+    color: #a07850;
+    margin-bottom: 24px;
+}
+.table-cloth{
+ border: 1px solid #ddc49a;
+ border-radius: 12px;
+ overflow: hidden;   
+}
+.akan-table{
+    width: 100%;
+    background: #ffffff;
+}
+.akan-table thead{
+    background:#6b3a1f;
+}
+.akan-table th{
+    padding: 16px 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #e8c49a;
+    font-weight: 600;
+    text-align: left;
+
+}
+.akan-table tbody tr{
+    border-bottom: 1px solid #ddc49a;
+}
+.akan-table tbody tr :last-child{
+    border-bottom: none;
+}
+.akan-table td{
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #2a1a0e;
+}
+.akan-table td :first-child{
+    font-weight: 600;
+    color:#6b3a1f;
+}
