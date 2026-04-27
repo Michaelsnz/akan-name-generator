@@ -10,10 +10,39 @@
       <p>GHANAIN CULTURAL HERITAGE</p>
       <h1>Akan Name <span id="Gen">Generator</span></h1>
       <p>
-        In Ghanain culture, every child receives a soul name based on the day of
-        the week they were born and their gender. Enter your birthdate and
-        gender below to discover the name the ancestors wold have given you
+        In Ghanain culture, every child receives a
+        <strong>soul name</strong> based on the day of the week they were born
+        and their gender. Enter your birthdate and gender below to discover the
+        name the ancestors wold have given you.
       </p>
     </header>
+    <!-- User Details Form -->
+    <section>
+      <h2>Enter Your Details</h2>
+      <p>Fill in the forms below to get your Akan name</p>
+      <form>
+        <!-- For the day -->
+        <label for="day">Day:</label>
+        <input type="number" id="day" name="day" placeholder="DD" />
+        <!-- For the month -->
+        <label for="month">Month:</label>
+        <input type="number" name="month" id="month" placeholder="MM" />
+        <!--for the year  -->
+        <label for="year">Year:</label>
+        <input type="number" name="year" id="year" placeholder="YYYY" /><br />
+        <!-- For the Gender -->
+        <label for="gender">Gender:</label><br />
+        <!-- Inputs to be in the label  -->
+        <label>
+            <!-- Type radio allows us to only selelct one option, either male or female -->
+          <input type="radio" name="gender" id="male" />
+          Male
+        </label>
+        <label>
+          <input type="radio" name="gender" id="female" />
+          Female
+        </label>
+      </form>
+    </section>
   </body>
 </html>
