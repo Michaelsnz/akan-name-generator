@@ -124,3 +124,57 @@ color: #2a1a0e;
 border-radius: 8px;
 width: 100%;
 }
+.gender-group{
+    margin-bottom: 24px;
+}
+.gender-options{
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+}
+.gender-pill{
+    display: flex;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+}
+.gender-pill input{
+    display: none;
+}
+.gender-pill span{
+    display: inline;
+    padding: 8px 20px;
+    border: 1px solid #ddc49a;
+    border-radius: 600px;
+    font-size: 12px;
+    color:#6b4a2a;
+    background: #f5e9d4;
+    cursor: pointer;
+    font-weight: 400;
+}
+.gender-pill input :checked{
+    background-color: #6b3a1f;
+    color: #e8c49a;
+    border-color: #6b3a1f;
+}
+.gender-pill span:hover{
+    border-color: #c1622f;
+    color: #c1622f;
+}
+button{
+    width: 100%;
+    padding: 16px 32px;
+    background-color: #c1622f;
+    color:#ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

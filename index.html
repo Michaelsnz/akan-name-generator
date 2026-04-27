@@ -53,21 +53,25 @@
         <input type="number" name="year" id="year" placeholder="YYYY" /><br />
             </div>
         </div>
-      </div>
-        <!-- For the Gender -->
-        <label for="gender">Gender:</label><br />
-        <!-- Inputs to be in the label  -->
-        <label>
-          <!-- Type radio allows us to only selelct one option, either male or female -->
-          <input type="radio" name="gender" id="male" />
-          Male
-        </label>
-        <label>
-          <input type="radio" name="gender" id="female" />
-          Female
-        </label>
+        <div class="gender-group">
+            <!-- For the Gender -->
+            <label for="gender">Gender:</label><br />
+            <div class="gender-options">
+                <!-- Inputs to be in the label  -->
+                <label class="gender-pill">
+                    <!-- Type radio allows us to only selelct one option, either male or female -->
+                    <input type="radio" name="gender" id="male" />
+                    <span>Male</span>
+                </label>
+                <label class="gender-pill">
+                    <input type="radio" name="gender" id="female" />
+                    <span>Female</span>
+                </label>
+            </div>
+        </div>
         <button type="submit">Discover Akan Name</button>
-      </form>
+    </div>
+    </form>
     </section>
     <!-- Akan Names table reference -->
     <section>
