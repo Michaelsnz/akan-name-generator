@@ -1,8 +1,74 @@
-html{scroll-behavior: smooth;}
-body{
-    font-family: 'DM Sans', sans-serif;
-    background-color: #fdf5ec;
-    color: #2a1a0e;
-    font-weight: 300;
-    line-height: 1.6;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #fdf5ec;
+  color: #2a1a0e;
+  font-weight: 300;
+  line-height: 1.6;
+}
+/* Header */
+/* Kente strips - saw these on a random website and did some research on how to add them  */
+.kente-strip {
+  flex: 1; /*Ensures each span grows to fill an equal share of the strip's width*/
+}
+.kente-strip span:nth-child(8n + 1) {
+  background: #c8922a;
+}
+/* nth-n child selectors target specific spans by their position on the list.
+8n+1 means every 8th element from the starting postion which creates a repeating colour pattern across 8 spans */
+.kente-strip span:nth-child(8n + 2) {
+  background: #3b2012;
+}
+.kente-strip span:nth-child(8n + 3) {
+  background: #c1622f;
+}
+.kente-strip span:nth-child(8n + 4) {
+  background: #1a6b2f;
+}
+.kente-strip span:nth-child(8n + 5) {
+  background: #c8922a;
+}
+.kente-strip span:nth-child(8n + 6) {
+  background: #c1622f;
+}
+.kente-strip span:nth-child(8n + 7) {
+  background: #3b2012;
+}
+.kente-strip span:nth-child(8n + 8) {
+  background: #1a6b2f;
+}
+.site-header {
+  text-align: center;
+  margin: 32px 0 48px;
+  animation: fadeUp 0.8s ease both;
+}
+.header-top {
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #c1622f;
+  margin-bottom: 16px;
+}
+.site-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  color: #3b2012;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.site-header h1 em {
+  font-style: italic;
+  color: #c1622f;
+}
+.header-bottom {
+  font-size: 16px;
+  color: #6b4a2a;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.header-bottom strong {
+  font-weight: 600;
+  color: #3b2012;
 }
