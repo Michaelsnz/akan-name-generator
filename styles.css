@@ -1,4 +1,8 @@
 html{scroll-behavior: smooth;}
 body{
-    
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fdf5ec;
+    color: #2a1a0e;
+    font-weight: 300;
+    line-height: 1.6;
 }
