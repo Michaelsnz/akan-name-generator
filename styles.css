@@ -14,7 +14,13 @@ body {
 }
 /* Header */
 /* Kente strips - saw these on a random website and did some research on how to add them  */
-.kente-strip {
+.kente-strip{
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.kente-strip span {
   flex: 1; /*Ensures each span grows to fill an equal share of the strip's width*/
 }
 .kente-strip span:nth-child(8n + 1) {
