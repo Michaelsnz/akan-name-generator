@@ -1,3 +1,5 @@
+<!doctype html>
+<!-- DOCTYPE tells the browser this is an HTML5 document — must be first line -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,131 +13,170 @@
     />
   </head>
   <body>
-    <!-- Kente  strip idea from claude -->
+    <!-- Kente strip idea from claude -->
     <header class="site-header">
       <div class="kente-strip">
-        <span></span><span></span><span></span><span></span><span></span
+        <span></span><span></span><span></span><span></span> <span></span
         ><span></span><span></span><span></span>
       </div>
-      <p class="header-top">GHANAIN CULTURAL HERITAGE</p>
+      <p class="header-top">GHANAIAN CULTURAL HERITAGE</p>
       <h1>Akan Name <em>Generator</em></h1>
       <p class="header-bottom">
-        In Ghanain culture, every child receives a
+        In Ghanaian culture, every child receives a
         <strong>soul name</strong> based on the day of the week they were born
         and their gender. Enter your birthdate and gender below to discover the
-        name the ancestors wold have given you.
+        name the ancestors would have given you.
       </p>
       <div class="kente-strip">
-        <span></span><span></span><span></span><span></span><span></span
+        <span></span><span></span><span></span><span></span> <span></span
         ><span></span><span></span><span></span>
       </div>
     </header>
+
     <!-- User Details Form -->
     <section class="card-section">
       <div class="form-card">
         <h2>Enter Your Details</h2>
-       <p class="form-intro">Fill in the forms below to get your Akan name</p>
-       <form>
-        <div class="form-row">
+        <p class="form-intro">Fill in the forms below to get your Akan name</p>
+
+        <form id="akanForm">
+          <div class="form-row">
             <div class="form-group">
-                <!-- For the day -->
-        <label for="day">Day:</label>
-        <input type="number" id="day" name="day" placeholder="DD" /> 
+              <label for="day">Day:</label>
+              <!-- type="number" only allows numbers to be typed -->
+              <input type="number" id="day" name="day" placeholder="DD" />
             </div>
             <div class="form-group">
-                <!-- For the month -->
-        <label for="month">Month:</label>
-        <input type="number" name="month" id="month" placeholder="MM" />
+              <label for="month">Month:</label>
+              <input type="number" name="month" id="month" placeholder="MM" />
             </div>
             <div class="form-group">
-                 <!--for the year  -->
-        <label for="year">Year:</label>
-        <input type="number" name="year" id="year" placeholder="YYYY" /><br />
+              <label for="year">Year:</label>
+              <input type="number" name="year" id="year" placeholder="YYYY" />
             </div>
-        </div>
-        <div class="gender-group">
-            <!-- For the Gender -->
-            <label for="gender">Gender:</label><br />
+          </div>
+
+          <div class="gender-group">
+            <label>Gender:</label>
             <div class="gender-options">
-                <!-- Inputs to be in the label  -->
-                <label class="gender-pill">
-                    <!-- Type radio allows us to only selelct one option, either male or female -->
-                    <input type="radio" name="gender" id="male" />
-                    <span>Male</span>
-                </label>
-                <label class="gender-pill">
-                    <input type="radio" name="gender" id="female" />
-                    <span>Female</span>
-                </label>
+              <label class="gender-pill">
+                <input type="radio" name="gender" value="male" />
+                <span>Male</span>
+              </label>
+              <label class="gender-pill">
+                <input type="radio" name="gender" value="female" />
+                <span>Female</span>
+              </label>
             </div>
-        </div>
-        <button type="submit">Discover Akan Name</button>
-    </div>
-    </form>
+          </div>
+
+          <div class="alert-box" id="alertBox"></div>
+
+          <button type="submit">Discover Akan Name</button>
+        </form>
+      </div>
     </section>
+
+    <section class="result-section" id="resultCard">
+      <div class="result-card">
+        <p class="result-eyebrow">Your Akan Name is</p>
+        <!-- id="resultName" — JS puts the Akan name here -->
+        <h2 class="result-name" id="resultName">—</h2>
+        <div class="result-divider"></div>
+        <div class="result-meta">
+          <div class="meta-item">
+            <span class="meta-label">Born on a</span>
+            <!-- id="resultDay" — JS puts the day name here e.g. "Friday" -->
+            <span class="meta-value" id="resultDay">—</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Gender</span>
+            <!-- id="resultGender" — JS puts "Male" or "Female" here -->
+            <span class="meta-value" id="resultGender">—</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Birthdate</span>
+            <!-- id="resultDate" — JS puts the formatted date here -->
+            <span class="meta-value" id="resultDate">—</span>
+          </div>
+        </div>
+        <!-- id="resultMeaning" — JS puts the cultural meaning here -->
+        <p class="result-meaning" id="resultMeaning"></p>
+        <!-- id="resetBtn" — JS listens for a click on this to reset the form -->
+        <button class="btn-reset" id="resetBtn" type="button">
+          Try Another Date
+        </button>
+      </div>
+    </section>
+
     <!-- Akan Names table reference -->
     <section class="table-section">
       <h2>All Akan Names</h2>
-      <p class="table-intro">Every day of the week carries its own Akan Name.</p>
+      <p class="table-intro">
+        Every day of the week carries its own Akan Name.
+      </p>
       <div class="table-cloth">
         <table class="akan-table">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Male Name</th>
-            <th>Female Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sunday</td>
-            <td>Kwasi</td>
-            <td>Akosua</td>
-          </tr>
-          <tr>
-            <td>Monday</td>
-            <td>Kaadwo</td>
-            <td>Adwoa</td>
-          </tr>
-          <tr>
-            <td>Tuesday</td>
-            <td>Kwabena</td>
-            <td>Abenaa</td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>Kwaku</td>
-            <td>Akua</td>
-          </tr>
-          <tr>
-            <td>Thursday</td>
-            <td>Yaw</td>
-            <td>Yaa</td>
-          </tr>
-          <tr>
-            <td>Friday</td>
-            <td>Kofi</td>
-            <td>Afua</td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>Kwame</td>
-            <td>Ama</td>
-          </tr>
-        </tbody>
-      </table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Male Name</th>
+              <th>Female Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sunday</td>
+              <td>Kwasi</td>
+              <td>Akosua</td>
+            </tr>
+            <tr>
+              <td>Monday</td>
+              <td>Kwadwo</td>
+              <td>Adwoa</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>Kwabena</td>
+              <td>Abenaa</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>Kwaku</td>
+              <td>Akua</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>Yaw</td>
+              <td>Yaa</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>Kofi</td>
+              <td>Afua</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>Kwame</td>
+              <td>Ama</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      
     </section>
+
     <footer>
       <div class="kente-strip">
-           <span></span><span></span><span></span><span></span> <span></span
-          ><span></span><span></span><span></span>
-        </div>
+        <span></span><span></span><span></span><span></span> <span></span
+        ><span></span><span></span><span></span>
+      </div>
       <p>
         © 2026 Akan Name Generator . Built with <em>Love</em> for Ghanaian
         Culture
       </p>
     </footer>
+
+    <!-- Script tag at the BOTTOM of body so all HTML loads before JS runs -->
+    <script src="script.js"></script>
   </body>
 </html>

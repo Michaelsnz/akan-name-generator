@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "DM Sans", sans-serif;
   background-color: #fdf5ec;
@@ -12,22 +13,25 @@ body {
   padding: 32px 24px 12px 48px;
   position: relative;
 }
-/* Header */
-/* Kente strips - saw these on a random website and did some research on how to add them  */
-.kente-strip{
+
+/* ── KENTE STRIP ── */
+.kente-strip {
   display: flex;
   height: 10px;
   overflow: hidden;
   border-radius: 4px;
 }
+
 .kente-strip span {
-  flex: 1; /*Ensures each span grows to fill an equal share of the strip's width*/
+  flex: 1; /* ensures each span grows to fill an equal share of the strip's width */
 }
+
+/* nth-child selectors target specific spans by their position on the list.
+   8n+1 means every 8th element from the starting position,
+   which creates a repeating colour pattern across all 8 spans */
 .kente-strip span:nth-child(8n + 1) {
   background: #c8922a;
 }
-/* nth-n child selectors target specific spans by their position on the list.
-8n+1 means every 8th element from the starting postion which creates a repeating colour pattern across 8 spans */
 .kente-strip span:nth-child(8n + 2) {
   background: #3b2012;
 }
@@ -49,17 +53,21 @@ body {
 .kente-strip span:nth-child(8n + 8) {
   background: #1a6b2f;
 }
+
+/* ── HEADER ── */
 .site-header {
   text-align: center;
   margin: 32px 0 48px;
-  animation: fadeUp 0.8s ease both;
+  animation: fadeUp 0.8s ease both; /* slides up gently when the page loads */
 }
+
 .header-top {
   font-size: 16px;
   letter-spacing: 2px;
   color: #c1622f;
   margin-bottom: 16px;
 }
+
 .site-header h1 {
   font-family: "Playfair Display", serif;
   font-size: 64px;
@@ -67,10 +75,12 @@ body {
   line-height: 1.2;
   margin-bottom: 24px;
 }
+
 .site-header h1 em {
   font-style: italic;
   color: #c1622f;
 }
+
 .header-bottom {
   font-size: 16px;
   color: #6b4a2a;
@@ -78,48 +88,58 @@ body {
   margin: 0 auto;
   line-height: 1.8;
 }
+
 .header-bottom strong {
   font-weight: 600;
   color: #3b2012;
 }
+
+/* ── FORM CARD ── */
 .card-section {
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
+
 .form-card {
   background: #ffffff;
   border: 1px solid #ddc49a;
   border-radius: 16px;
   padding: 40px;
 }
+
 .form-card h2 {
   font-family: "Playfair Display", serif;
   font-size: 24px;
   color: #3b2012;
   margin-bottom: 4px;
 }
+
 .form-intro {
   font-size: 16px;
   color: #a07850;
   margin-bottom: 32px;
 }
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
   margin-bottom: 20px;
 }
+
 .form-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stacks the label above the input */
   gap: 4px;
 }
+
 .form-group label {
   font-size: 12px;
   letter-spacing: 1.5px;
   color: #6b4a2a;
   font-weight: 600;
 }
+
 .form-group input {
   border: 1px solid #ddc49a;
   background: #f5e9d4;
@@ -129,44 +149,78 @@ body {
   color: #2a1a0e;
   border-radius: 8px;
   width: 100%;
+  outline: none; /* removes the default browser blue focus ring */
+  transition: border-color 0.2s; /* smooth colour change on focus */
 }
+
+.form-group input:focus {
+  border-color: #c1622f; /* border turns terracotta orange when active */
+}
+
 .gender-group {
   margin-bottom: 24px;
 }
+
 .gender-options {
   display: flex;
   gap: 16px;
   margin-top: 4px;
 }
+
 .gender-pill {
   display: flex;
   align-items: center;
-  gap: 0;
   cursor: pointer;
 }
+
+/* Hide the actual radio button — we style the span as the visible button */
 .gender-pill input {
   display: none;
 }
+
 .gender-pill span {
-  display: inline;
+  display: inline-block;
   padding: 8px 20px;
   border: 1px solid #ddc49a;
-  border-radius: 600px;
+  border-radius: 600px; /* very high value = perfect pill shape */
   font-size: 12px;
   color: #6b4a2a;
   background: #f5e9d4;
   cursor: pointer;
   font-weight: 400;
+  transition: all 0.2s; /* smooth colour change on hover and select */
 }
-.gender-pill input :checked {
-  background-color: #6b3a1f;
-  color: #e8c49a;
-  border-color: #6b3a1f;
+
+.gender-pill input:checked + span {
+  background-color: #6b3a1f; /* dark brown fill when selected */
+  color: #e8c49a; /* sandy text on dark background */
+  border-color: #6b3a1f; /* border matches background */
+  font-weight: 600;
 }
+
+/* PSEUDOCLASS — :hover changes the pill appearance when moused over */
 .gender-pill span:hover {
   border-color: #c1622f;
   color: #c1622f;
 }
+
+.alert-box {
+  display: none;
+  background: #fff3f0;
+  border: 1px solid #e07050;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #8b2500;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* When JS adds the "visible" class, override display:none to show the box */
+.alert-box.visible {
+  display: block;
+}
+
 button {
   width: 100%;
   padding: 16px 32px;
@@ -178,38 +232,168 @@ button {
   letter-spacing: 1.5px;
   border: none;
   border-radius: 24px;
-  cursor: pointer;
+  cursor: pointer; /* shows a hand cursor — signals it's clickable */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  transition:
+    background-color 0.2s,
+    transform 0.15s; /* smooth hover animation */
 }
+
+button:hover {
+  background-color: #6b3a1f; /* darkens to mahogany on hover */
+  transform: translateY(-2px); /* lifts up 2px — satisfying click feel */
+}
+
+/* :active applies while the button is being clicked — snaps back to position */
+button:active {
+  transform: translateY(0);
+}
+
+/*   Hidden by default. JS adds class "visible" to show it after calculating. */
+.result-section {
+  display: none; /* hidden until JS adds the "visible" class */
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s ease both; /* slides up when it appears */
+}
+
+.result-section.visible {
+  display: block; /* overrides display:none when "visible" class is added by JS */
+}
+
+.result-card {
+  background: #3b2012; /* very dark brown — dramatic contrast with the rest of page */
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.result-eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d4845a; /* medium orange — readable on dark background */
+  margin-bottom: 12px;
+}
+
+/* The big Akan name display */
+.result-name {
+  font-family: "Playfair Display", serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #e8c49a; /* sandy colour — warm and readable on dark background */
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+/* Decorative horizontal line between name and metadata */
+.result-divider {
+  width: 60px;
+  height: 2px;
+  background: #c1622f; /* terracotta line */
+  margin: 0 auto 24px; /* centred horizontally, space below */
+  border-radius: 1px;
+}
+
+/* Row of three metadata items */
+.result-meta {
+  display: flex;
+  justify-content: center; /* centred in the card */
+  gap: 40px;
+  margin-bottom: 24px;
+  flex-wrap: wrap; /* wraps to next line on small screens */
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column; /* stacks label above value */
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a07850; /* muted colour for labels */
+}
+
+.meta-value {
+  font-size: 16px;
+  color: #e8c49a; /* sandy colour */
+  font-weight: 500;
+}
+
+/* Cultural meaning description below the metadata */
+.result-meaning {
+  font-size: 14px;
+  color: #d4845a;
+  font-style: italic;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Reset button — different style to the main submit button */
+.btn-reset {
+  display: inline-block;
+  width: auto; /* overrides the full-width from the general button rule */
+  padding: 10px 28px;
+  background: transparent; /* no fill — just a border */
+  color: #e8c49a;
+  border: 1px solid #d4845a;
+  border-radius: 999px; /* pill shape */
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  background: #c1622f;
+  border-color: #c1622f;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .table-section {
   margin-bottom: 48px;
 }
+
 .table-section h2 {
-  font-family: "Playfair Display" serif;
+  font-family: "Playfair Display", serif;
   font-size: 28px;
   color: #3b2012;
   margin-bottom: 4px;
 }
+
 .table-intro {
   font-size: 16px;
   color: #a07850;
   margin-bottom: 24px;
 }
+
+/* Wrapper for the border and rounded corners around the table */
 .table-cloth {
   border: 1px solid #ddc49a;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; /* clips table corners to match the wrapper's border-radius */
 }
+
 .akan-table {
   width: 100%;
   background: #ffffff;
+  border-collapse: collapse; /* removes gaps between table cells */
 }
+
 .akan-table thead {
-  background: #6b3a1f;
+  background: #6b3a1f; /* dark brown header */
 }
+
 .akan-table th {
   padding: 16px 20px;
   font-size: 12px;
@@ -218,31 +402,52 @@ button {
   font-weight: 600;
   text-align: left;
 }
+
 .akan-table tbody tr {
   border-bottom: 1px solid #ddc49a;
+  transition: background 0.15s; /* smooth background change on hover */
 }
-.akan-table tbody tr :last-child {
-  border-bottom: none;
+
+.akan-table tbody tr:last-child {
+  border-bottom: none; /* removes the line after the last row */
 }
+
+.akan-table tbody tr:hover {
+  background: #f5e9d4;
+}
+
 .akan-table td {
   padding: 12px 20px;
   font-size: 16px;
   color: #2a1a0e;
 }
-.akan-table td :first-child {
+
+.akan-table td:first-child {
   font-weight: 600;
-  color: #6b3a1f;
+  color: #6b3a1f; /* dark brown for the day name column */
 }
+
+/* Highlighted row — added by JS when a matching day is found */
+.akan-table tbody tr.highlight {
+  background: #f5e9d4;
+  outline: 2px solid #c1622f; /* terracotta border on the matching row */
+  outline-offset: -2px;
+}
+
 footer {
   margin-bottom: 20px;
 }
+
 footer p {
   font-size: 16px;
   color: #a07850;
 }
+
 footer em {
   color: #c1622f;
+  font-style: normal;
 }
+
 footer .kente-strip {
   margin-bottom: 20px;
 }
