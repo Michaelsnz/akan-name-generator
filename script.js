@@ -4,47 +4,47 @@
 
 // ── AKAN NAMES DATA ──
 
+let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 // Arrays holding the Akan names indexed by day number.
 // Position 0 = Sunday, 1 = Monday ... 6 = Saturday.
 // We use the day number calculated from the formula to pick the right name.
-let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-// Array of day names in the same order — used to display the day on the result card
 let dayNames = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
 ];
+// Array of day names in the same order — used to display the day on the result card
 
-// Array of cultural meanings for each day — same order as above
 let dayMeanings = [
-  "Sunday-born souls are known for their peace, spirituality and strong sense of self.",
-  "Monday-born souls are calm, quiet and deeply dependable — pillars of their community.",
-  "Tuesday-born souls are passionate, energetic and full of inner fire.",
-  "Wednesday-born souls are curious, adaptable and gifted communicators.",
-  "Thursday-born souls are generous, noble and natural leaders.",
-  "Friday-born souls are loving, creative and bring beauty wherever they go.",
-  "Saturday-born souls are resilient, hardworking and deeply grounded.",
+    "Sunday-born souls are known for their peace, spirituality and strong sense of self.",
+    "Monday-born souls are calm, quiet and deeply dependable — pillars of their community.",
+    "Tuesday-born souls are passionate, energetic and full of inner fire.",
+    "Wednesday-born souls are curious, adaptable and gifted communicators.",
+    "Thursday-born souls are generous, noble and natural leaders.",
+    "Friday-born souls are loving, creative and bring beauty wherever they go.",
+    "Saturday-born souls are resilient, hardworking and deeply grounded.",
 ];
+// Array of cultural meanings for each day — same order as above
 
-// ── FUNCTION: calculateDayOfWeek ──
-// Takes a day, month and year and returns which day of the week it falls on.
-// Returns a number: 0 = Sunday, 1 = Monday ... 6 = Saturday.
 function calculateDayOfWeek(day, month, year) {
-  // CC = the first two digits of the year
-  // Math.floor() rounds DOWN to the nearest whole number
-  // e.g. year 1989: 1989 / 100 = 19.89 → Math.floor gives 19
-  let CC = Math.floor(year / 100);
+    // function used to calculate the day of the week
+    // Takes a day, month and year and returns which day of the week it falls on.
+    // Returns a number: 0 = Sunday, 1.....
+    let CC = Math.floor(year / 100);
+    // CC = the first two digits of the year
+    // Math.floor() rounds DOWN to the nearest whole number
+    // e.g. year 1989: 1989 / 100 = 19.89 → Math.floor gives 19
 
-  // YY = the last two digits of the year
-  // The % operator gives the REMAINDER after dividing
-  // e.g. year 1989: 1989 % 100 = 89
-  let YY = year % 100;
+    let YY = year % 100;
+    // YY = the last two digits of the year
+    // The % operator gives the REMAINDER after dividing
+    // e.g. year 1989: 1989 % 100 = 89
 
   // Apply the formula from the project spec.
   // Each Math.floor() rounds down the result of that part.
@@ -66,10 +66,10 @@ function calculateDayOfWeek(day, month, year) {
   return result; // returns a number 0–6 representing the day of the week
 }
 
-// ── FUNCTION: validateInputs ──
-// Checks all inputs are valid before calculating.
-// Returns an error message string if something is wrong, or null if all is fine.
 function validateInputs(day, month, year, gender) {
+    // functions for input validations
+    // Checks all inputs are valid before calculating.
+    // Returns an error message string if something is wrong, or null if all is fine.
   // The ! (NOT) operator makes a truthy value false and vice versa.
   // If day/month/year is empty or NaN (Not a Number), !day etc. will be true.
   // The || (OR) means: if ANY of these are missing, return the error message.
