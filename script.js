@@ -126,7 +126,7 @@ function hideAlert() {
   // classList.remove() removes the CSS class — hiding the element again
 }
 
-// ── FUNCTION: displayResult ──
+// FUNCTION: displayResult 
 function displayResult(akanName, dayIndex, gender, day, month, year) {
   // Fills the result card with the calculated name and info, then shows it
   document.getElementById("resultName").textContent = akanName;
