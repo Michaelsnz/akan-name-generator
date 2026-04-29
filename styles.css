@@ -325,18 +325,6 @@ button:active {
   font-weight: 500;
 }
 
-/* Cultural meaning description below the metadata */
-.result-meaning {
-  font-size: 14px;
-  color: #d4845a;
-  font-style: italic;
-  margin-bottom: 32px;
-  line-height: 1.6;
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Reset button — different style to the main submit button */
 .btn-reset {
   display: inline-block;
@@ -425,13 +413,6 @@ button:active {
 .akan-table td:first-child {
   font-weight: 600;
   color: #6b3a1f; /* dark brown for the day name column */
-}
-
-/* Highlighted row — added by JS when a matching day is found */
-.akan-table tbody tr.highlight {
-  background: #f5e9d4;
-  outline: 2px solid #c1622f; /* terracotta border on the matching row */
-  outline-offset: -2px;
 }
 
 footer {
