@@ -1,5 +1,4 @@
-// ── AKAN NAMES DATA ──
-
+// AKAN NAMES DATA
 let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 // Arrays holding the Akan names indexed by day number.
@@ -101,7 +100,7 @@ function validateInputs(day, month, year, gender) {
   return null;
 }
 
-// ── FUNCTION: showAlert ──
+// FUNCTION: showAlert 
 function showAlert(message) {
   let alertBox = document.getElementById("alertBox");
   // Makes the red alert box visible with an error message inside it

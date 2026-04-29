@@ -16,6 +16,16 @@ To run this project locally:
 3. Place any photos inside an `images/` folder in the same directory
 4. Open `index.html` in any web browser — no installs needed!
 
+## Behaviour Driven Development
+
+1. Input: date of birth annd gender
+   - Output: Akann name based on day of birth and gender
+2. Input: Invalid date (day ≤ 0 or day > 31)
+   - Output: Error message requesting valid date
+3. Input: Invalid month (month ≤ 0 or month > 12)
+   - Output: Error message requesting valid month
+
+
 ## Technologies Used
 
 HTML 
@@ -25,6 +35,10 @@ JAVASCRIPT
 ## Contact Information
 
 0710704236
+
+## Link to Live server
+
+https://michaelsnz.github.io/akan-name-generator/
 
 ##  License
 
