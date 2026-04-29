@@ -325,7 +325,7 @@ button:active {
   font-weight: 500;
 }
 
-/* Reset button — different style to the main submit button */
+clear/* Reset button — different style to the main submit button */
 .btn-reset {
   display: inline-block;
   width: auto; /* overrides the full-width from the general button rule */
